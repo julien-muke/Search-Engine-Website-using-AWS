@@ -67,3 +67,86 @@ Click the check box for the newly created database, click "Actions" dropdown men
 | Call of Duty Warzone | First-Person Shooter | Mature - 17+ |
 | Minecraft | Survival Game | Everyone - 10+ |
 
+
+
+Note: You can duplicate an item to help expedite the process - shown in screenshot below 
+
+
+![Screenshot 2024-01-01 at 12 48 17](https://github.com/julien-muke/Search-Engine-Website-using-AWS/assets/110755734/a490ee55-aca0-4dad-b6db-c7885787d927)
+
+
+
+5. Once complete, the items in your table should look like what's shown below
+
+
+
+![Screenshot 2024-01-01 at 12 53 58](https://github.com/julien-muke/Search-Engine-Website-using-AWS/assets/110755734/f2608c8a-ca46-4bd7-bde9-ace52bf546df)
+
+
+
+## ➡️ Step 2 - Create Lambda IAM Role
+
+Create the execution role that gives your function permission to access AWS resources.
+
+To create an execution role
+
+1. Open the roles page in the IAM console.
+2. Choose Create role.
+3. Create a role with the following properties.
+        * Trusted entity – Lambda.
+        * Role name – lambda-apigateway-dynamodb-role.
+        * Permissions – Custom policy with permission to DynamoDB and CloudWatch Logs. This custom policy has the permissions that the function needs to write data to DynamoDB and upload logs.
+
+
+![Screenshot 2024-01-01 at 12 55 45](https://github.com/julien-muke/Search-Engine-Website-using-AWS/assets/110755734/dc60c1c1-23bb-4fe0-8882-db00d51654db)
+
+
+
+![Create-policy-IAM-Global (3)](https://github.com/julien-muke/Search-Engine-Website-using-AWS/assets/110755734/1fafa468-72e9-42f3-a819-f83f4d16743b)
+
+
+
+![Create-policy-IAM-Global (4)](https://github.com/julien-muke/Search-Engine-Website-using-AWS/assets/110755734/c2df491e-81b5-49a4-9c56-829cbaa12c7d)
+
+
+
+
+![Screenshot 2024-01-01 at 13 00 34](https://github.com/julien-muke/Search-Engine-Website-using-AWS/assets/110755734/ca7fec1e-ed53-4be7-9cea-dae928c0d283)
+
+
+
+![Screenshot 2024-01-01 at 13 10 44](https://github.com/julien-muke/Search-Engine-Website-using-AWS/assets/110755734/e6ab0780-fc52-470a-9789-a25d1510cc39)
+
+
+
+![Create-role-IAM-Global (3)](https://github.com/julien-muke/Search-Engine-Website-using-AWS/assets/110755734/3cfd440d-b678-4d11-b3af-bf0ac3d893ec)
+
+
+
+
+
+
+```bash
+{
+"Version": "2012-10-17",
+"Statement": [
+    {
+        "Sid": "VisualEditor0",
+        "Effect": "Allow",
+        "Action": [
+            "logs:CreateLogStream",
+            "dynamodb:PutItem",
+            "dynamodb:DeleteItem",
+            "dynamodb:GetItem",
+            "dynamodb:Scan",
+            "dynamodb:Query",
+            "dynamodb:UpdateItem",
+            "logs:PutLogEvents",
+            "logs:CreateLogGroup"
+        ],
+        "Resource": "*"
+    }
+]
+}
+```
+
