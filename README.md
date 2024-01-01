@@ -105,32 +105,6 @@ To create an execution role
 ![Create-policy-IAM-Global (3)](https://github.com/julien-muke/Search-Engine-Website-using-AWS/assets/110755734/1fafa468-72e9-42f3-a819-f83f4d16743b)
 
 
-
-![Create-policy-IAM-Global (4)](https://github.com/julien-muke/Search-Engine-Website-using-AWS/assets/110755734/c2df491e-81b5-49a4-9c56-829cbaa12c7d)
-
-
-
-
-![Screenshot 2024-01-01 at 13 00 34](https://github.com/julien-muke/Search-Engine-Website-using-AWS/assets/110755734/ca7fec1e-ed53-4be7-9cea-dae928c0d283)
-
-
-
-![Screenshot 2024-01-01 at 13 01 29](https://github.com/julien-muke/Search-Engine-Website-using-AWS/assets/110755734/3bb32d38-8ef1-47c2-ac34-7136c129c9df)
-
-
-
-
-![Screenshot 2024-01-01 at 13 10 44](https://github.com/julien-muke/Search-Engine-Website-using-AWS/assets/110755734/e6ab0780-fc52-470a-9789-a25d1510cc39)
-
-
-
-![Create-role-IAM-Global (3)](https://github.com/julien-muke/Search-Engine-Website-using-AWS/assets/110755734/3cfd440d-b678-4d11-b3af-bf0ac3d893ec)
-
-
-
-
-
-
 ```bash
 {
 "Version": "2012-10-17",
@@ -154,4 +128,103 @@ To create an execution role
 ]
 }
 ```
+
+
+
+![Create-policy-IAM-Global (4)](https://github.com/julien-muke/Search-Engine-Website-using-AWS/assets/110755734/c2df491e-81b5-49a4-9c56-829cbaa12c7d)
+
+
+
+
+![Screenshot 2024-01-01 at 13 00 34](https://github.com/julien-muke/Search-Engine-Website-using-AWS/assets/110755734/ca7fec1e-ed53-4be7-9cea-dae928c0d283)
+
+
+
+![Screenshot 2024-01-01 at 13 01 29](https://github.com/julien-muke/Search-Engine-Website-using-AWS/assets/110755734/3bb32d38-8ef1-47c2-ac34-7136c129c9df)
+
+
+
+
+![Screenshot 2024-01-01 at 13 10 44](https://github.com/julien-muke/Search-Engine-Website-using-AWS/assets/110755734/e6ab0780-fc52-470a-9789-a25d1510cc39)
+
+
+
+![Create-role-IAM-Global (3)](https://github.com/julien-muke/Search-Engine-Website-using-AWS/assets/110755734/3cfd440d-b678-4d11-b3af-bf0ac3d893ec)
+
+
+
+## ➡️ Step 3 - Create Lambda Function
+
+To create the function
+
+1. Go to the Lambda console
+2. Click "Create function" in AWS Lambda Console
+
+
+
+![Screenshot 2024-01-01 at 13 33 04](https://github.com/julien-muke/Search-Engine-Website-using-AWS/assets/110755734/3d83c8da-6192-40ee-87e9-6e4f5f252c9b)
+
+
+
+3. Select "Author from scratch". Use name GamingSearchEngine , select Python 3.8 as Runtime. Under Permissions, select "Use an existing role", and select lambda-apigateway-dynamodb-role that we created, from the drop down
+
+4. Click "Create function"
+
+
+
+![Create-function-Lambda (1)](https://github.com/julien-muke/Search-Engine-Website-using-AWS/assets/110755734/dd0fc78d-98f1-4aca-a113-508ca3c3284f)
+
+
+
+
+5. Replace the existing sample code with the following code snippet and click "Deploy"
+
+
+👉 Python CRUD Operation Code
+
+
+```bash
+    import boto3
+    import json
+
+    def lambda_handler(event, context):
+    # Create a DynamoDB client
+    dynamodb = boto3.resource('dynamodb')
+
+    # Retrieve the partition key value from the event
+    partition_key_value = event['Name of Game']
+
+    # Get the DynamoDB table
+    table = dynamodb.Table('GamingSearchEngine')
+
+    # Call the get_item operation
+    response = table.get_item(
+        Key={
+            'Name of Game': partition_key_value
+        }
+    )
+
+    # Process the response
+    if 'Item' in response:
+        item = response['Item']
+        # Do something with the item
+        item_data = json.loads(json.dumps(item))  # Convert item to JSON-compatible format
+        return {
+            'statusCode': 200,
+            'body': item_data
+        }
+    else:
+        return {
+            'statusCode': 404,
+            'body': 'Item not found'
+        }
+
+        
+```
+
+
+
+![Screenshot 2024-01-01 at 13 36 30](https://github.com/julien-muke/Search-Engine-Website-using-AWS/assets/110755734/a6436c90-e183-4c28-b355-2c7fb74a7604)
+
+
 
