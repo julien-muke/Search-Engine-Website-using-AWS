@@ -208,7 +208,8 @@ To create the function
     if 'Item' in response:
         item = response['Item']
         # Do something with the item
-        item_data = json.loads(json.dumps(item))  # Convert item to JSON-compatible format
+        item_data = json.loads(json.dumps(item))  
+        # Convert item to JSON-compatible format
         return {
             'statusCode': 200,
             'body': item_data
