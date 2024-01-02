@@ -353,100 +353,100 @@ Click on slash `/`, then click Create method"
 1. Copy the HTML code shown below
 
 
-```bash
+```html
 
-    <html>
-<head>
-  <title>Gaming Search Engine</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f2f2f2;
-      margin: 0;
-      padding: 20px;
-    }
+   <html>
+   <head>
+    <title>Gaming Search Engine</title>
+        <style>
+            body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+            }
 
-    #container {
-      max-width: 600px;
-      margin: 0 auto;
-      background-color: #fff;
-      padding: 20px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
+            #container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
 
-    h1 {
-      font-size: 32px;
-      text-align: center;
-      margin: 0;
-    }
+            h1 {
+            font-size: 32px;
+            text-align: center;
+            margin: 0;
+            }
 
-    form {
-      text-align: center;
-      margin-top: 40px;
-    }
+            form {
+            text-align: center;
+            margin-top: 40px;
+            }
 
-    input[type="text"] {
-      width: 400px;
-      height: 36px;
-      padding: 8px;
-      font-size: 16px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
+            input[type="text"] {
+            width: 400px;
+            height: 36px;
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            }
 
-    input[type="submit"] {
-      background-color: #FFA500;
-      border: none;
-      padding: 8px 16px;
-      font-size: 16px;
-      cursor: pointer;
-    }
+            input[type="submit"] {
+            background-color: #FFA500;
+            border: none;
+            padding: 8px 16px;
+            font-size: 16px;
+            cursor: pointer;
+            }
 
-    pre {
-      margin-top: 40px;
-      background-color: #f2f2f2;
-      padding: 20px;
-      white-space: pre-wrap;
-      word-wrap: break-word;
-    }
-  </style>
-</head>
-<body>
-  <div id="container">
-    <h1>Gaming Search Engine</h1>
-    <form id="apiForm" action="INVOKE URL" method="POST">
-      <input type="text" id="nameInput" name="Name of Game" value="GameName">
-      <br><br>
-      <input type="submit" value="Submit">
-    </form>
-    <pre id="response"></pre>
-  </div>
+            pre {
+            margin-top: 40px;
+            background-color: #f2f2f2;
+            padding: 20px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            }
+        </style>
+    </head>
+    <body>
+    <div id="container">
+        <h1>Gaming Search Engine</h1>
+        <form id="apiForm" action="INVOKE URL" method="POST">
+        <input type="text" id="nameInput" name="Name of Game" value="GameName">
+        <br><br>
+        <input type="submit" value="Submit">
+        </form>
+        <pre id="response"></pre>
+    </div>
 
-  <script>
-    const form = document.getElementById('apiForm');
-    const responsePre = document.getElementById('response');
+        <script>
+            const form = document.getElementById('apiForm');
+            const responsePre = document.getElementById('response');
 
-    form.addEventListener('submit', function(event) {
-      event.preventDefault();
-      const formData = new FormData(form);
+            form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData(form);
 
-      fetch(form.action, {
-        method: form.method,
-        body: JSON.stringify(Object.fromEntries(formData)),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
-      .then(response => response.json())
-      .then(data => {
-        responsePre.textContent = JSON.stringify(data, null, 2);
-      })
-      .catch(error => {
-        responsePre.textContent = 'An error occurred: ' + error.message;
-      });
-    });
-  </script>
-</body>
+            fetch(form.action, {
+                method: form.method,
+                body: JSON.stringify(Object.fromEntries(formData)),
+                headers: {
+                'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                responsePre.textContent = JSON.stringify(data, null, 2);
+            })
+            .catch(error => {
+                responsePre.textContent = 'An error occurred: ' + error.message;
+            });
+            });
+        </script>
+    </body>
 </html>
 
 
