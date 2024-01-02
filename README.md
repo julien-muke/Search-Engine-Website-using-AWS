@@ -295,7 +295,7 @@ To create the API
 
 
 
-4. Make sure to select "New API" and Give the API name as GamingSearchEngine, keep everything as is, click "Create API"
+4. Make sure to select "New API" and Give the API name as `GamingSearchEngine`, keep everything as is, click "Create API"
 
 
 
