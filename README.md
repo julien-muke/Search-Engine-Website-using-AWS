@@ -1,6 +1,7 @@
 # ☁️ AWS Project - Create a basic Search Engine website using AWS
 
-src: https://raw.githubusercontent.com/Surgo/aws_emojipacks/master/emojis/ec2.png
+aws logo :aws:
+
 
 ## 📄 Introduction
 
