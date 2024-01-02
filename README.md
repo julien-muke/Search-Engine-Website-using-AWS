@@ -341,6 +341,13 @@ Click on slash `/`, then click Create method"
 
 
 
+13. Keep your Invoke URL handy. We will use this in the next step.
+
+
+![Screenshot 2024-01-01 at 14 10 05](https://github.com/julien-muke/Search-Engine-Website-using-AWS/assets/110755734/e40ab4fc-ea2f-4837-90b8-0b38717285b3)
+
+
+
 
 
 
