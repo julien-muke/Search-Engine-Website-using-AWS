@@ -105,7 +105,7 @@ To create an execution role
 ![Create-policy-IAM-Global (3)](https://github.com/julien-muke/Search-Engine-Website-using-AWS/assets/110755734/1fafa468-72e9-42f3-a819-f83f4d16743b)
 
 
-```bash
+```json
 {
 "Version": "2012-10-17",
 "Statement": [
@@ -183,7 +183,7 @@ To create the function
 👉 Python CRUD Operation Code
 
 
-```bash
+```python
     import boto3
     import json
 
@@ -247,7 +247,7 @@ Get Information for Minecraft Game
 
 
 
-```bash
+```json
     {
        "Name of Game" : "Minecraft"
     }
@@ -354,7 +354,6 @@ Click on slash `/`, then click Create method"
 
 
 ```html
-
    <html>
    <head>
     <title>Gaming Search Engine</title>
