@@ -470,6 +470,53 @@ Insert your Invoke URL here. Keep the quotations around your link as well.
 
 
 
+## ➡️ Step 7 - Create Website using Amplify
+
+1. Go to the AWS Amplify console
+2. Click "GET STARTED" and then click get started for "Host your web app" under "Amplify Hosting"
+
+
+
+![Screenshot 2024-01-01 at 14 18 20](https://github.com/julien-muke/Search-Engine-Website-using-AWS/assets/110755734/4ef478bb-911a-4c4c-b523-cef52ec0d44b)
+
+
+
+3. Click "Deploy without Git provider" option then click "Continue"
+
+
+![Screenshot 2024-01-01 at 14 18 39](https://github.com/julien-muke/Search-Engine-Website-using-AWS/assets/110755734/a743d2a8-8896-4248-9868-249860a51885)
+
+
+
+4. Name the app `GamingSearchEngine`, Name the environment `dev`, then drag and drop the zipped `index` file that was saved in the previous step. Then click "Save and deploy".
+
+
+
+![Screenshot 2024-01-01 at 14 22 28](https://github.com/julien-muke/Search-Engine-Website-using-AWS/assets/110755734/cd3303ec-1474-4bb5-b05f-65fdf5e325be)
+
+
+
+5. Once deployed, click the domain URL. You should be directed to the website we created via the HTML code.
+
+
+![Screenshot 2024-01-01 at 14 24 36](https://github.com/julien-muke/Search-Engine-Website-using-AWS/assets/110755734/e7d1dd96-8e8b-4bca-a420-8a0e84916d30)
+
+
+
+💻 Deployement Successufully Completed - LIVE HTML Website
+
+
+![Screenshot 2024-01-01 at 14 25 00](https://github.com/julien-muke/Search-Engine-Website-using-AWS/assets/110755734/adedbed2-ae54-4c31-b40d-50d9e9724caa)
+
+
+
+## ➡️ Step 8 - Test the Webpage
+
+
+Type in "Minecraft" and you should receive a response back. Feel free to test the other game names as well (Must type the names of them exactly how they are in DynamoDB - Yes, Case Sensitive).
+
+
+![Screenshot 2024-01-01 at 14 26 53](https://github.com/julien-muke/Search-Engine-Website-using-AWS/assets/110755734/1b546a9e-4d57-4329-81ab-e4ad5f28781b)
 
 
 
