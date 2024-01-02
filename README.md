@@ -1,5 +1,7 @@
 # ☁️ AWS Project - Create a basic Search Engine website using AWS
 
+src: https://raw.githubusercontent.com/Surgo/aws_emojipacks/master/emojis/ec2.png
+
 ## 📄 Introduction
 
 In this lab we will create a Gaming Search Engine (with a database of 5 games) from scratch in the AWS console using services/components like DynamoDB, Amplify, and API Gateway. Our Website will be hosted on a static HTML website. The HTML website will be powered by Amplify and will function from the API we create in API Gateway.
@@ -502,7 +504,7 @@ Insert your Invoke URL here. Keep the quotations around your link as well.
 
 
 
-💻 Deployement Successufully Completed - LIVE HTML Website
+Deployement Successufully Completed - 🌐 LIVE HTML Website
 
 
 ![Screenshot 2024-01-01 at 14 25 00](https://github.com/julien-muke/Search-Engine-Website-using-AWS/assets/110755734/adedbed2-ae54-4c31-b40d-50d9e9724caa)
