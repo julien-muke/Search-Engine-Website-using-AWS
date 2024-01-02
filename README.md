@@ -1,6 +1,5 @@
-# ☁️ AWS Project - Create a basic Search Engine website using AWS
-
-aws logo :aws:
+# ☁️ ![aws](https://github.com/julien-muke/Search-Engine-Website-using-AWS/assets/110755734/01cd6124-8014-4baa-a5fe-bd227844d263)
+ AWS Project - Create a basic Search Engine website using AWS
 
 
 ## 📄 Introduction
