@@ -27,7 +27,7 @@ As shown on the architecture diagram below: the users is going to log on to the 
 
 
 
-3. Name the table "GamingSearchEngine" and name the partition key as "Name of Game". Keep everything else default
+3. Name the table `GamingSearchEngine` and name the partition key as `Name of Game`. Keep everything else default
 
 
 ![Create-table-Amazon-DynamoDB-Management-Console-DynamoDB-us-east-1 (1)](https://github.com/julien-muke/Search-Engine-Website-using-AWS/assets/110755734/6f6f4acc-e31e-49b6-8055-0f2afaaaa125)
@@ -87,23 +87,17 @@ Note: You can duplicate an item to help expedite the process - shown in screensh
 
 ## ➡️ Step 2 - Create Lambda IAM Role
 
-Create the execution role that gives your function permission to access AWS resources.
+Create the execution role that gives your function permission to access AWS resources. Before you can apply your Lambda Policy to a Lambda function, you have to create the policy in your own account and then apply it to an IAM role.
 
-To create an execution role
+To create an IAM policy:
 
-1. Open the roles page in the IAM console.
-2. Choose Create role.
-3. Create a role with the following properties.
-        * Trusted entity – Lambda.
-        * Role name – lambda-apigateway-dynamodb-role.
-        * Permissions – Custom policy with permission to DynamoDB and CloudWatch Logs. This custom policy has the permissions that the function needs to write data to DynamoDB and upload logs.
+1. Navigate to the IAM console and choose Policies in the navigation pane. Choose Create policy.
 
 
 ![Screenshot 2024-01-01 at 12 55 45](https://github.com/julien-muke/Search-Engine-Website-using-AWS/assets/110755734/dc60c1c1-23bb-4fe0-8882-db00d51654db)
 
 
-
-![Create-policy-IAM-Global (3)](https://github.com/julien-muke/Search-Engine-Website-using-AWS/assets/110755734/1fafa468-72e9-42f3-a819-f83f4d16743b)
+2. Because I have already written the policy in JSON, you don’t need to use the Visual Editor, so you can choose the JSON tab and paste the content of the JSON policy document shown earlier in this post (remember to replace the placeholder account ID with your own account ID). Choose Review policy.
 
 
 ```json
@@ -132,27 +126,46 @@ To create an execution role
 
 
 
+![Create-policy-IAM-Global (3)](https://github.com/julien-muke/Search-Engine-Website-using-AWS/assets/110755734/1fafa468-72e9-42f3-a819-f83f4d16743b)
+
+
+
+3. Name the policy `lambda-apigateway-dynamodb-policy` and give it a description that will help you remember the policy’s purpose. You also can view a summary of the policy’s permissions. Choose Create policy.
+
+
 ![Create-policy-IAM-Global (4)](https://github.com/julien-muke/Search-Engine-Website-using-AWS/assets/110755734/c2df491e-81b5-49a4-9c56-829cbaa12c7d)
 
 
+You have created the IAM policy that you will apply to the Lambda function.
+
+👉 Attach the IAM policy to an IAM role
+
+To apply `lambda-apigateway-dynamodb-policy` to a Lambda function, you first have to attach the policy to an IAM role.
+
+1. To create a new role and attach `lambda-apigateway-dynamodb-policy` to the role:
+
+Navigate to the IAM console and choose Roles in the navigation pane. Choose Create role.
 
 
 ![Screenshot 2024-01-01 at 13 00 34](https://github.com/julien-muke/Search-Engine-Website-using-AWS/assets/110755734/ca7fec1e-ed53-4be7-9cea-dae928c0d283)
 
 
+2. Choose AWS service and then choose Lambda. Choose Next: Permissions.
+
 
 ![Screenshot 2024-01-01 at 13 01 29](https://github.com/julien-muke/Search-Engine-Website-using-AWS/assets/110755734/3bb32d38-8ef1-47c2-ac34-7136c129c9df)
 
 
+3. On the Attach permissions policies page, type `lambda-apigateway-dynamodb-policy` in the Search box. Choose `lambda-apigateway-dynamodb-policy` from the list of returned search results, and then choose Next: Review.
 
 
 ![Screenshot 2024-01-01 at 13 10 44](https://github.com/julien-muke/Search-Engine-Website-using-AWS/assets/110755734/e6ab0780-fc52-470a-9789-a25d1510cc39)
 
-
+4. On the Review page, type `lambda-apigateway-dynamodb-role` in the Role name box and an appropriate description, and then choose Create role.
 
 ![Create-role-IAM-Global (3)](https://github.com/julien-muke/Search-Engine-Website-using-AWS/assets/110755734/3cfd440d-b678-4d11-b3af-bf0ac3d893ec)
 
-
+You have attached the policy you created earlier to a new IAM role, which in turn can be used by a Lambda function.
 
 ## ➡️ Step 3 - Create Lambda Function
 
