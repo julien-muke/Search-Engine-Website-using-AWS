@@ -229,3 +229,131 @@ To create the function
 
 
 
+## ➡️ Step 4 - Test Lambda Function
+
+Let's test our newly created function. Testing this function will make sure we will receive gaming information back when we search for the game.
+
+Get Information for Minecraft Game
+
+1. Click the arrow on the "Test" button and click "Configure test events"
+
+
+
+![Screenshot 2024-01-01 at 13 37 19](https://github.com/julien-muke/Search-Engine-Website-using-AWS/assets/110755734/47223370-e946-41ad-a497-d7d008042c63)
+
+
+
+2. Name the event "Test" then Paste the following JSON into the event. Afterwards, click "Save" to create.
+
+
+
+```bash
+    {
+       "Name of Game" : "Minecraft"
+    }
+```
+
+
+![Screenshot 2024-01-01 at 13 38 19](https://github.com/julien-muke/Search-Engine-Website-using-AWS/assets/110755734/a78c13c9-0d7f-4f5a-96df-275a09d39522)
+
+
+
+3. Click "Test", and it will execute the test event. You should see the output in the console
+
+
+
+![Screenshot 2024-01-01 at 13 42 46](https://github.com/julien-muke/Search-Engine-Website-using-AWS/assets/110755734/14e855a2-fcc2-4194-a1b7-2617098f6131)
+
+
+
+
+## ➡️ Step 5 - Create API and Deploy API
+
+To create the API
+
+1. Go to API Gateway console
+2. Click "Create API"
+3. Scroll down to REST API and click "Build"
+
+
+
+![Screenshot 2024-01-01 at 13 44 16](https://github.com/julien-muke/Search-Engine-Website-using-AWS/assets/110755734/9965d864-9361-45fd-a729-6d6ec8186cb2)
+
+
+
+4. Make sure to select "New API" and Give the API name as GamingSearchEngine, keep everything as is, click "Create API"
+
+
+
+![Screenshot 2024-01-01 at 13 45 17](https://github.com/julien-muke/Search-Engine-Website-using-AWS/assets/110755734/13f8688b-67a7-4077-8687-6fa1d437329a)
+
+
+
+5. Each API is collection of resources and methods that are integrated with backend HTTP endpoints, Lambda functions, or other AWS services. Typically, API resources are organized in a resource tree according to the application logic. At this time you only have the root resource, but let's add a resource next
+
+
+Click on slash `/`, then click Create method"
+
+
+![Screenshot 2024-01-01 at 13 47 15](https://github.com/julien-muke/Search-Engine-Website-using-AWS/assets/110755734/1ac38b6b-df20-4f85-8394-c963d23c7063)
+
+
+
+6. Select "POST" in the dropdown and click the check button
+
+7. Keep the integration type as Lambda Function. Make sure the Region is the same as your Lambda Function and DynamoDB (It should be because of the default settings).
+
+8. In Lambda Function text bar type in `GamingSearchEngine` and select that lambda function we created in the previous step. Click "Create method.
+
+
+![Screenshot 2024-01-01 at 13 54 02](https://github.com/julien-muke/Search-Engine-Website-using-AWS/assets/110755734/ec76497a-67d0-4bcd-97ac-ad7946e7fb00)
+
+
+
+9. Click Enable CORS.
+
+
+
+![Screenshot 2024-01-01 at 14 05 42](https://github.com/julien-muke/Search-Engine-Website-using-AWS/assets/110755734/61786e30-a26a-431c-8e83-ce21f82f57ef)
+
+
+
+
+10. Make sure `POST` is checked under "Methods" then click "Save"
+
+
+![Screenshot 2024-01-01 at 14 06 50](https://github.com/julien-muke/Search-Engine-Website-using-AWS/assets/110755734/384449f3-3c30-4302-af22-1800470154b9)
+
+
+
+11. Click the "Deploy API" button. 
+
+
+![Screenshot 2024-01-01 at 14 08 27](https://github.com/julien-muke/Search-Engine-Website-using-AWS/assets/110755734/b1ad29aa-d79d-459d-b084-f96b2355bb41)
+
+
+
+12. Click deployment stage, select "New Stage", Stage name `dev` then click "Deploy"
+
+
+
+![Screenshot 2024-01-01 at 14 08 52](https://github.com/julien-muke/Search-Engine-Website-using-AWS/assets/110755734/160c9f67-411b-40c9-827b-94b0741f8c2f)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
