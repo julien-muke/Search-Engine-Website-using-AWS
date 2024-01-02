@@ -454,6 +454,27 @@ Click on slash `/`, then click Create method"
 
 
 
+2. Paste it to Notepad (for windows), TextEdit (for apple), or a source code editor like Visual Studio Code (download the software from a Google Search)
+
+3. Update the "INVOKE URL" in the code with your REST API Invoke URL from API Gateway in the previous step.
+
+Insert your Invoke URL here. Keep the quotations around your link as well.
+
+
+![Screenshot 2024-01-01 at 14 20 57](https://github.com/julien-muke/Search-Engine-Website-using-AWS/assets/110755734/1e69b5f5-32ad-40f8-ab6b-aa21001c3335)
+
+
+
+4. Save the file as `index` of html type. Thus, you may have to save it as `index.html`.
+5. Turn the file into a "compressed (zipped) folder". Again, keep the name as `index`
+
+
+
+
+
+
+
+
 
 
 
