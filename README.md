@@ -180,7 +180,7 @@ To create the function
 
 
 
-3. Select "Author from scratch". Use name GamingSearchEngine , select Python 3.8 as Runtime. Under Permissions, select "Use an existing role", and select lambda-apigateway-dynamodb-role that we created, from the drop down
+3. Select "Author from scratch". Use name `GamingSearchEngine` , select Python 3.8 as Runtime. Under Permissions, select "Use an existing role", and select lambda-apigateway-dynamodb-role that we created, from the drop down
 
 4. Click "Create function"
 
@@ -526,7 +526,7 @@ Deployement Successufully Completed - 🌐 LIVE HTML Website
 ## ➡️ Step 8 - Test the Webpage
 
 
-Type in "Minecraft" and you should receive a response back. Feel free to test the other game names as well (Must type the names of them exactly how they are in DynamoDB - Yes, Case Sensitive).
+Type in "Call of Duty Warzone" and you should receive a response back. Feel free to test the other game names as well (Must type the names of them exactly how they are in DynamoDB - Yes, Case Sensitive).
 
 
 ![Screenshot 2024-01-01 at 14 26 53](https://github.com/julien-muke/Search-Engine-Website-using-AWS/assets/110755734/1b546a9e-4d57-4329-81ab-e4ad5f28781b)
