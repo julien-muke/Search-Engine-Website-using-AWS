@@ -180,7 +180,7 @@ To create the function
 
 
 
-3. Select "Author from scratch". Use name `GamingSearchEngine` , select Python 3.8 as Runtime. Under Permissions, select "Use an existing role", and select lambda-apigateway-dynamodb-role that we created, from the drop down
+3. Select "Author from scratch". Use name `GamingSearchEngine` , select Python 3.8 as Runtime. Under Permissions, select "Use an existing role", and select `lambda-apigateway-dynamodb-role` that we created, from the drop down
 
 4. Click "Create function"
 
